@@ -31,7 +31,7 @@ def download(year, day):
     readme_path.write_text(
         f"# {puzzle.title}\n\n"
         f"**Advent of Code: Day {day}, {year}**\n\n"
-        f"See {puzzle.url}"
+        f"See {puzzle.url}\n"
     )
 
 
