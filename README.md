@@ -29,7 +29,7 @@ You can also use Copier as part of a script. The [documentation](https://copier.
 On the command line, you can use `-d` to provide answers to questions instead of answering them interactively. On Bash (and possibly other shells), the following will set up all directories for the 2021 event inside of your `aoc/` directory:
 
 ```console
-$ for day in `seq 25`; do
+$ for day in {1..25}; do
 >     copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day -d puzzle_name="" aoc/
 > done
 ```

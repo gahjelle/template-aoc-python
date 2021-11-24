@@ -47,3 +47,7 @@ day:
 puzzle_name:
   type: str
   default: ""
+
+puzzle_dir:
+  type: str
+  default: "[['%02d'|format(day)]][% if puzzle_name %]_[[puzzle_name|lower|replace(' ','_')]][% endif %]"
