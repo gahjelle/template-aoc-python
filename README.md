@@ -11,7 +11,7 @@ $ pipx install copier
 $ python -m pip install advent-of-code-data
 ```
 
-Once you have Copier on your system, you can create Advent of Code solution templates as follows:
+Note that `advent-of-code-data` requires a small bit of [setup](https://github.com/wimglenn/advent-of-code-wim/issues/1) where you find and specify your personal Advent of Code session ID. Once you have Copier on your system, you can create Advent of Code solution templates as follows:
 
 ```console
 $ copier gh:gahjelle/template-aoc-python advent_of_code/
@@ -29,9 +29,18 @@ You can also use Copier as part of a script. The [documentation](https://copier.
 On the command line, you can use `-d` to provide answers to questions instead of answering them interactively. On Bash (and possibly other shells), the following will set up all directories for the 2021 event inside of your `aoc/` directory:
 
 ```console
-$ for day in {1..25}; do
->     copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day -d puzzle_name="" aoc/
+$ for day in {01..25}; do
+>     copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day -d puzzle_name="" -d puzzle_dir=$day aoc/
 > done
+```
+
+If you're using Powershell on Windows, you can use something like this instead:
+
+```
+for ($day = 1; $day -le 25; $day++) {
+    $day_str = "{0:00}" -f $day
+    copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day_str -d puzzle_name="" -d puzzle_dir=$day_str aoc/
+}
 ```
 
 After running this, you'll have 25 subdirectories within `aoc/2021/` with templates for solving each day of Advent of Code with Python.
@@ -39,4 +48,11 @@ After running this, you'll have 25 subdirectories within `aoc/2021/` with templa
 
 ## Examples
 
-See https://github.com/gahjelle/advent_of_code/tree/main/python for examples using the template.
+See https://github.com/gahjelle/advent_of_code/tree/main/python for examples using the template. My tutorial, [Advent of Code: Solving Your Puzzles With Python](https://realpython.com/python-advent-of-code/), explains the reasoning behind the template and shows a few examples of using it to solve puzzles.
+
+
+## Credits
+
+Thanks to [Matt Gregory](https://github.com/grovduck) for helping to [debug](https://github.com/gahjelle/template-aoc-python/issues/1) this recipe for Windows and creating the Powershell script to create a full year of templates.
+
+And a huge thanks to [Eric Wastl](https://twitter.com/ericwastl/) for creating the wonderful [Advent of Code](https://adventofcode.com/).

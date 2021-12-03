@@ -1,10 +1,10 @@
-"""Tests for AoC [[day]], [[year]][% if puzzle_name %]: [[puzzle_name]][% endif %]"""
+"""Tests for AoC [[day|int]], [[year]][% if puzzle_name %]: [[puzzle_name]][% endif %]"""
 
 # Standard library imports
 import pathlib
 
 # Third party imports
-import aoc[[year]][['%02d'|format(day)]]
+import aoc[[year]][[day]]
 import pytest
 
 PUZZLE_DIR = pathlib.Path(__file__).parent
@@ -13,13 +13,13 @@ PUZZLE_DIR = pathlib.Path(__file__).parent
 @pytest.fixture
 def example1():
     puzzle_input = (PUZZLE_DIR / "example1.txt").read_text().strip()
-    return aoc[[year]][['%02d'|format(day)]].parse(puzzle_input)
+    return aoc[[year]][[day]].parse(puzzle_input)
 
 
 @pytest.fixture
 def example2():
     puzzle_input = (PUZZLE_DIR / "example2.txt").read_text().strip()
-    return aoc[[year]][['%02d'|format(day)]].parse(puzzle_input)
+    return aoc[[year]][[day]].parse(puzzle_input)
 
 
 @pytest.mark.skip(reason="Not implemented")
@@ -31,10 +31,10 @@ def test_parse_example1(example1):
 @pytest.mark.skip(reason="Not implemented")
 def test_part1_example1(example1):
     """Test part 1 on example input"""
-    assert aoc[[year]][['%02d'|format(day)]].part1(example1) == ...
+    assert aoc[[year]][[day]].part1(example1) == ...
 
 
 @pytest.mark.skip(reason="Not implemented")
 def test_part2_example2(example2):
     """Test part 2 on example input"""
-    assert aoc[[year]][['%02d'|format(day)]].part2(example2) == ...
+    assert aoc[[year]][[day]].part2(example2) == ...
