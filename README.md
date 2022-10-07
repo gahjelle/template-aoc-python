@@ -2,6 +2,8 @@
 
 This template creates scaffolding for one day of [Advent of Code](https://adventofcode.com/). It includes tests and can download your personal input data if you have [`advent-of-code-data`](https://pypi.org/project/advent-of-code-data/) installed.
 
+> **Note:** You need at least [version 6](https://copier.readthedocs.io/en/latest/changelog/#600-2022-05-15) of Copier to use this template.
+
 ## Quick Start
 
 The first time you use this template you should make sure that you have [Copier](https://copier.readthedocs.io/) installed and optionally `advent-of-code-data` as well. You can install these with pipx and pip:

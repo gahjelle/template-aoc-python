@@ -1,48 +1,49 @@
 # Settings
 _subdirectory: src
 _tasks:
-  - python ./download_input.py [[year]] [[day]]
+  - python ./download_input.py {{year}} {{day}}
 
 # Questions
 year:
-  type: str
+  type: int
   choices:
-    - "2015"
-    - "2016"
-    - "2017"
-    - "2018"
-    - "2019"
-    - "2020"
-    - "2021"
+    - 2015
+    - 2016
+    - 2017
+    - 2018
+    - 2019
+    - 2020
+    - 2021
+    - 2022
 
 day:
-  type: str
+  type: int
   choices:
-    - "01"
-    - "02"
-    - "03"
-    - "04"
-    - "05"
-    - "06"
-    - "07"
-    - "08"
-    - "09"
-    - "10"
-    - "11"
-    - "12"
-    - "13"
-    - "14"
-    - "15"
-    - "16"
-    - "17"
-    - "18"
-    - "19"
-    - "20"
-    - "21"
-    - "22"
-    - "23"
-    - "24"
-    - "25"
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
 
 puzzle_name:
   type: str
@@ -50,4 +51,4 @@ puzzle_name:
 
 puzzle_dir:
   type: str
-  default: "[[day]][% if puzzle_name %]_[[puzzle_name|lower|replace(' ','_')]][% endif %]"
+  default: "{{'%02d'|format(day)}}{% if puzzle_name %}_{{puzzle_name|lower|replace(' ','_')}}{% endif %}"
