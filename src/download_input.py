@@ -26,6 +26,10 @@ def download(year, day):
     output_path = next(year_path.glob(f"{day:02d}*")) / "input.txt"
     output_path.write_text(puzzle.input_data)
 
+    # Download example data
+    output_path = output_path.with_stem("example1")
+    output_path.write_text(puzzle.example_data)
+
     # Add README with link to puzzle text
     readme_path = output_path.with_name("README.md")
     readme_path.write_text(
