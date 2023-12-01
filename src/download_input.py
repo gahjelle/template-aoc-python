@@ -27,8 +27,9 @@ def download(year, day):
     output_path.write_text(puzzle.input_data)
 
     # Download example data
-    output_path = output_path.with_stem("example1")
-    output_path.write_text(puzzle.example_data)
+    for index, example in enumerate(puzzle.examples, start=1):
+        output_path = output_path.with_stem(f"example{index}")
+        output_path.write_text(example.input_data)
 
     # Add README with link to puzzle text
     readme_path = output_path.with_name("README.md")
