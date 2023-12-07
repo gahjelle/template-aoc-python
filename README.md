@@ -16,7 +16,7 @@ $ python -m pip install advent-of-code-data
 Note that `advent-of-code-data` requires a small bit of [setup](https://github.com/wimglenn/advent-of-code-wim/issues/1) where you find and specify your personal Advent of Code session ID. Once you have Copier on your system, you can create Advent of Code solution templates as follows:
 
 ```console
-$ copier gh:gahjelle/template-aoc-python advent_of_code/
+$ copier copy gh:gahjelle/template-aoc-python advent_of_code/ --trust
 ```
 
 This will ask you about which **year** and **day** you want to template. You can also provide a puzzle name which will be used as part of the directory name and the comments within your files.
@@ -32,7 +32,7 @@ On the command line, you can use `-d` to provide answers to questions instead of
 
 ```console
 $ for day in {01..25}; do
->     copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day -d puzzle_name="" -d puzzle_dir=$day aoc/
+>     copier copy gh:gahjelle/template-aoc-python -d year=2021 -d day=$day -d puzzle_name="" -d puzzle_dir=$day aoc/ --trust
 > done
 ```
 
@@ -41,7 +41,7 @@ If you're using Powershell on Windows, you can use something like this instead:
 ```
 for ($day = 1; $day -le 25; $day++) {
     $day_str = "{0:00}" -f $day
-    copier gh:gahjelle/template-aoc-python -d year=2021 -d day=$day_str -d puzzle_name="" -d puzzle_dir=$day_str aoc/
+    copier copy gh:gahjelle/template-aoc-python -d year=2021 -d day=$day_str -d puzzle_name="" -d puzzle_dir=$day_str aoc/ --trust
 }
 ```
 
